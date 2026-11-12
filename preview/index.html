@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DJ Studio | دي جي استوديو</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="video.css"><style>.vinyl-record:not(.scratching){animation:none!important}</style>
+</head>
+<body>
+  <aside>
+    <div class="brand"><span class="brand-mark">▶</span><strong>DJ Studio</strong></div>
+    <div class="profile"><div class="avatar">DJ</div><b>دي جي استوديو</b><small>Music & Video Mixer</small></div>
+    <button class="nav active" data-filter="all"><span>☷</span><b>قائمتي</b><small>كل الوسائط</small></button>
+    <button class="nav" data-filter="Movie"><span>▣</span><b>الأفلام</b><small>مكتبة الفيديو</small></button>
+    <button class="nav" data-filter="Song"><span>♫</span><b>الأغاني</b><small>مكتبة الصوت</small></button>
+    <div class="add-actions"><label class="add" for="files">＋ إضافة ملفات</label><label class="add folder" for="folderFiles">▣ إضافة مجلد</label></div><input id="files" type="file" accept="audio/*,video/*" multiple hidden><input id="folderFiles" type="file" webkitdirectory directory multiple hidden>
+  </aside>
+  <main>
+    <header><div class="logo">DJ<span>Studio</span></div><input id="search" placeholder="ابحث في مكتبتك..."><button id="settingsButton">⚙<small> الإعدادات</small></button></header>
+    <section class="video-stage hidden" id="videoStage"><video id="video" controls playsinline preload="metadata"></video><div class="video-message hidden" id="videoMessage"></div><button id="closeVideo">× إغلاق الفيديو</button></section>
+    <section class="player"><div class="cover" id="cover">♫</div><div class="now"><small>يعمل الآن</small><h2 id="nowTitle">اختر أغنية أو فيديو</h2><p id="nowArtist">مكتبتك فارغة</p><div class="bar" id="progressBar"><i id="progressFill"></i></div><div class="time-row"><span id="currentTime">00:00</span><span id="durationTime">00:00</span></div><div class="code-line">MediaPlayer • LinkedList • Ready</div></div><div class="controls"><button id="prev">⏮<small>السابق</small></button><button id="play" class="play">▶</button><button id="next">⏭<small>التالي</small></button></div></section>
+    <section class="library"><div class="section-title"><div><h2>مكتبة DJ Studio</h2><p>أفلامك وأغانيك في مكان واحد</p></div><span id="count"></span></div><div class="grid" id="grid"></div></section>
+    <section class="dj-panel">
+      <div class="dj-title"><div><b>🎛 DJ STUDIO MIXER</b><small>اسحب الأسطوانة بيدك لعمل Scratch</small></div><span id="bpmLabel">120 BPM</span></div>
+      <div class="deck speaker-deck"><div class="speaker"><i></i><span>A</span></div><b>SPEAKER A</b><small id="deckTitle">يرجع المقطع إلى البداية</small><button id="cueButton" title="إرجاع الأغنية إلى البداية">⏮ CUE TO START</button><div class="master-volume"><b>MASTER</b><input id="volume" type="range" min="0" max="100" value="70" orient="vertical"><span id="volumeValue">70%</span></div></div>
+      <div class="mixer">
+        <div class="equalizer" id="equalizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="mixer-console"><div class="vertical-faders"><label><b>BASS</b><input id="bass" type="range" min="0" max="100" value="50" orient="vertical"><span>0 dB</span></label><label><b>MID</b><input id="mid" type="range" min="0" max="100" value="50" orient="vertical"><span>0 dB</span></label><label><b>TREBLE</b><input id="treble" type="range" min="0" max="100" value="50" orient="vertical"><span>0 dB</span></label><label><b>SPEED</b><input id="speed" type="range" min="50" max="150" value="100" orient="vertical"><span>1.0×</span></label></div><div class="environment-picker"><label>🎚 SOUND ENVIRONMENT</label><select id="environmentPreset"><option value="normal">◉ Normal Studio</option><option value="stadium">🏟 Stadium</option><option value="hall">🎼 Concert Hall</option><option value="telephone">📻 Telephone / Radio</option><option value="underwater">🌊 Underwater</option><option value="bass">🔊 Bass Boost</option><option value="vocal">🎙 Vocal Boost</option></select><small id="presetDescription">صوت استوديو متوازن</small></div></div>
+        <label class="cross">A <input id="crossfader" type="range" min="0" max="100" value="50"> B</label>
+        <div class="pads"><button id="vocalButton">🎙 REMOVE VOCAL</button><button id="loopButton">↻ LOOP</button><button id="resetDj">↺ RESET</button></div><div class="instruments-row"><div class="instrument-box"><b>VINYL SCRATCH</b><div class="vinyl-record" id="scratchDisc"><div class="vinyl-label">DJ<br><span>STUDIO</span></div><i class="vinyl-hole"></i></div><small>حرّك لقدام وورا</small></div><div class="instrument-box"><b>ARABIC TABLA</b><div class="tabla tabla-mixer"><button class="tabla-zone center" data-tone="dum">دُم</button><button class="tabla-zone top" data-tone="tak">تَك</button><button class="tabla-zone right" data-tone="ka">ك</button><button class="tabla-zone bottom" data-tone="sak">سَك</button><button class="tabla-zone left" data-tone="tak">تَك</button></div><small>اضرب المناطق</small></div><div class="instrument-box"><b>ARABIC RIQ</b><button id="riqPad" class="riq-instrument">🪘</button><small>اضغط للرق</small></div><div class="instrument-box mic-box"><b>LIVE MICROPHONE</b><button id="micButton" class="mic-button">🎤</button><input id="micVolume" type="range" min="0" max="100" value="60"><small id="micStatus">متوقف</small></div></div>
+      </div>
+      <div class="deck deck-b speaker-deck"><div class="speaker"><i></i><span>B</span></div><b>DECK B</b><small id="deckBTitle">لم تُضف أغنية</small><div class="deck-b-actions"><label for="deckBFile">＋ LOAD B</label><button id="deckBPlay">▶ PLAY B</button></div><input id="deckBFile" type="file" accept="audio/*,.mp3,.wav,.m4a,.ogg" hidden><small id="syncStatus">جاهز للمزامنة</small><button id="syncButton">⚡ AUTO SYNC</button></div>
+    </section>
+    <footer><span>DJ Studio Engine (active)</span><span>Playlist: Linked List</span><span>Player: Ready</span></footer>
+  </main>
+  <div class="modal hidden" id="settingsModal"><div class="settings"><div class="modal-title"><h2>إعدادات نجود</h2><button id="closeSettings">×</button></div><label>لون الواجهة</label><div class="colors"><button data-color="#42df70" style="background:#42df70"></button><button data-color="#35a7ff" style="background:#35a7ff"></button><button data-color="#b66cff" style="background:#b66cff"></button></div><label>مستوى الصوت: <span id="volumeValue">70%</span></label><input id="volume" type="range" min="0" max="100" value="70"><label class="check"><input id="autoplay" type="checkbox"> تشغيل التالي تلقائيًا</label><label class="check"><input id="compact" type="checkbox"> بطاقات صغيرة</label><button class="save" id="saveSettings">حفظ الإعدادات</button></div></div>
+  <div class="toast hidden" id="toast"></div><audio id="audio"></audio><audio id="audioB"></audio><script src="app.js"></script>
+</body></html>

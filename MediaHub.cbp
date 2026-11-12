@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MediaHub" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/MediaHub" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-std=c++11" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/MediaHub" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++11" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="include" />
+		</Compiler>
+		<Unit filename="include/audio/AudioDeck.h" />
+		<Unit filename="include/audio/AudioEffects.h" />
+		<Unit filename="include/audio/AudioTypes.h" />
+		<Unit filename="include/audio/ConsoleAudioBackend.h" />
+		<Unit filename="include/audio/DJMixer.h" />
+		<Unit filename="include/audio/EnvironmentPresetManager.h" />
+		<Unit filename="include/audio/IAudioBackend.h" />
+		<Unit filename="include/controller/DJController.h" />
+		<Unit filename="include/model/SmartDJModel.h" />
+		<Unit filename="include/view/ConsoleView.h" />
+		<Unit filename="include/view/IPlayerView.h" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/audio/AudioDeck.cpp" />
+		<Unit filename="src/audio/AudioEffects.cpp" />
+		<Unit filename="src/audio/ConsoleAudioBackend.cpp" />
+		<Unit filename="src/audio/DJMixer.cpp" />
+		<Unit filename="src/audio/EnvironmentPresetManager.cpp" />
+		<Unit filename="src/controller/DJController.cpp" />
+		<Unit filename="src/model/SmartDJModel.cpp" />
+		<Unit filename="src/view/ConsoleView.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
